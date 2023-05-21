@@ -15,8 +15,8 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
         with:
           main-branch-name: ${{ github.base_ref || github.ref_name }}
-      - run: npx nx-cloud start-agent
       - run: npm ci
+      - run: npx nx-cloud start-agent
       - run: npx nx format:check
       - run: npx nx affected --targets=lint,build
       - run: npx nx affected -t test --configuration=ci
