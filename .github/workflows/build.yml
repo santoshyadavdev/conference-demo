@@ -6,8 +6,8 @@ on:
   pull_request:
 
 env:
-    NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
-    
+  NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
+
 jobs:
   main:
     runs-on: ubuntu-latest
