@@ -1,23 +1,23 @@
 {
-  "name": "home",
+  "name": "ui-lib",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/home/src",
+  "sourceRoot": "libs/ui-lib/src",
   "prefix": "conf-demo",
-  "tags": ["type:libs:home"],
+  "tags": ["type:libs:ui-lib"],
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/angular:ng-packagr-lite",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/home/ng-package.json"
+        "project": "libs/ui-lib/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/home/tsconfig.lib.prod.json"
+          "tsConfig": "libs/ui-lib/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/home/tsconfig.lib.json"
+          "tsConfig": "libs/ui-lib/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/home/jest.config.ts",
+        "jestConfig": "libs/ui-lib/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -40,7 +40,11 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/home/**/*.ts", "libs/home/**/*.html"]
+        "lintFilePatterns": [
+          "libs/ui-lib/**/*.ts",
+          "libs/ui-lib/**/*.html",
+          "libs/ui-lib/package.json"
+        ]
       }
     }
   }

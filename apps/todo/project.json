@@ -1,25 +1,22 @@
 {
-  "name": "hello-world",
+  "name": "todo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "conf-demo",
-  "sourceRoot": "apps/hello-world/src",
-  "tags": ["type:app:hello-world"],
+  "sourceRoot": "apps/todo/src",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/hello-world",
-        "index": "apps/hello-world/src/index.html",
-        "main": "apps/hello-world/src/main.ts",
+        "outputPath": "dist/apps/todo",
+        "index": "apps/todo/src/index.html",
+        "main": "apps/todo/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/hello-world/tsconfig.app.json",
-        "assets": [
-          "apps/hello-world/src/favicon.ico",
-          "apps/hello-world/src/assets"
-        ],
-        "styles": ["apps/hello-world/src/styles.scss"],
+        "tsConfig": "apps/todo/tsconfig.app.json",
+        "assets": ["apps/todo/src/favicon.ico", "apps/todo/src/assets"],
+        "styles": ["apps/todo/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "hello-world:build:production"
+          "browserTarget": "todo:build:production"
         },
         "development": {
-          "browserTarget": "hello-world:build:development"
+          "browserTarget": "todo:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,24 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "hello-world:build"
+        "browserTarget": "todo:build"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/hello-world/**/*.ts",
-          "apps/hello-world/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/todo/**/*.ts", "apps/todo/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/hello-world/jest.config.ts",
+        "jestConfig": "apps/todo/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -94,7 +88,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "hello-world:build"
+        "buildTarget": "todo:build"
       }
     }
   }

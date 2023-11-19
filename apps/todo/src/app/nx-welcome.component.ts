@@ -1,11 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AccordionComponent } from '@conf-demo/design-system';
 
 @Component({
   selector: 'conf-demo-nx-welcome',
-  standalone: true,
-  imports: [CommonModule, AccordionComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -424,7 +420,7 @@ import { AccordionComponent } from '@conf-demo/design-system';
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
-            Welcome hello-world 👋
+            Welcome todo 👋
           </h1>
         </div>
         <!--  HERO  -->

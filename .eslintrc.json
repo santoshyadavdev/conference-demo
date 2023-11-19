@@ -13,8 +13,12 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "type:app:hello-world",
+                "onlyDependOnLibsWithTags": ["type:libs:home"]
+              },
+              {
+                "sourceTag": "type:libs:ui-lib",
+                "onlyDependOnLibsWithTags": ["type:libs:design-system"]
               }
             ]
           }
