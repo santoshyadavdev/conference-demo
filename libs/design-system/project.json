@@ -3,15 +3,14 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/design-system/src",
   "prefix": "conf-demo",
-  "tags": [],
+  "tags": ["type:libs:design-system"],
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/design-system/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/design-system/ng-package.json"
       },
       "configurations": {
         "production": {
